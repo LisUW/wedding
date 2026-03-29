@@ -29,6 +29,10 @@
     font-family: "Inter", sans-serif;
     line-height: 1.7;
   }
+  body {
+    overflow-x: hidden;
+  }
+  
   
   img {
     max-width: 100%;
@@ -66,9 +70,9 @@
   
   /* HERO */
   .hero {
-    min-height: 100vh;
+    min-height: 70vh;
     background:
-    linear-gradient(rgba(247,247,245,0.7), rgba(247,247,245,0.9)),
+      linear-gradient(rgba(247,247,245,0.7), rgba(247,247,245,0.9)),
       linear-gradient(135deg, rgba(107,125,92,0.7), rgba(31,42,68,0.7)),
       url("us.jpg");
     background-size: cover;
@@ -126,10 +130,11 @@
   
   /* COUPLE PHOTO */
   .couple-photo {
-    max-width: 700px;
-    margin: 20px auto;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
   }
   
   .hachi {
@@ -161,9 +166,12 @@
   
   /* TEXT BLOCK */
   .text-block {
-    max-width: 750px;
-    margin: 40px auto 0;
-    text-align: center;
+    padding: 0 15px;
+  }
+  
+  .text-block p {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
   
   /* BUTTON */
@@ -184,6 +192,7 @@
     overflow: hidden;
   }
   .script {
+    text-align: center;
     font-family: "Great Vibes", cursive;
     color: var(--navy);
     font-size: clamp(2.2rem, 4vw, 3.2rem);
@@ -222,6 +231,313 @@
   }
   .weatherwidget-io {
     width: 100%;
+    display: block;
+    min-height: 230px;
+  }
+  
+  .card,
+  .venue-social .card {
+    text-align: center;
+  }
+  .venue-gallery {
+    background-color: var(--bg-soft);
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 24px;
+    margin-top: 40px;
+  }
+  
+  .gallery img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  }
+  .gallery img {
+    border-radius: 20px;
+  }
+  .carousel {
+    position: relative;
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: center;
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+  
+  .carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .prev {
+    left: -20px;
+  }
+  
+  .next {
+    right: -20px;
+  }
+  .gallery img:hover {
+    transform: scale(1.03);
+  }
+  
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--bg-soft);
+    color: var(--muted);
+  }
+  /* RESET */
+* {
+    box-sizing: border-box;
+  }
+  :root {
+    --bg: #f7f7f5;          /* blanco cálido */
+    --bg-soft: #eef1ec;     /* verde grisáceo suave */
+    --text: #2d2d2d;
+    --muted: #5f5a57;
+    --olive: #6b7d5c;       /* oliva principal */
+    --olive-dark: #556447;  /* oliva oscuro para hover */
+    --navy: #1f2a44;
+    --card: #ffffff;
+    --border: rgba(31, 42, 68, 0.08);
+    --shadow: 0 12px 30px rgba(31, 42, 68, 0.10);
+    --radius: 22px;
+    --max-width: 1080px;
+  }
+  
+  /* BASE */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* TYPOGRAPHY */
+  h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(3.6rem, 8vw, 5.8rem);
+    color: var(--navy);
+    margin: 0.2em 0;
+  }
+  
+  h2 {
+    font-family: "Playfair Display", serif;
+    color: var(--olive);
+    text-align: center;
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--navy);
+  }
+  
+  p {
+    margin-top: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /* HERO */
+  .hero {
+    min-height: 70vh;
+    background:
+      linear-gradient(rgba(247,247,245,0.7), rgba(247,247,245,0.9)),
+      linear-gradient(135deg, rgba(107,125,92,0.7), rgba(31,42,68,0.7)),
+      url("us.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .overlay {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 25px;
+    padding: 40px 30px;
+    max-width: 800px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+  
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--olive);
+    font-size: 0.8rem;
+  }
+  
+  .subtitle {
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  
+  /* SECTIONS */
+  .section {
+    padding: 70px 20px;
+  }
+  
+  .section:nth-child(even) {
+    background: var(--bg-soft);
+  }
+  
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  
+  .narrow {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  /* COUPLE PHOTO */
+  .couple-photo {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  
+  .hachi {
+    color: var(--muted);
+    font-size: 1.1rem;
+  }
+  
+  /* CARDS */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .single-card {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 25px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  
+  /* TEXT BLOCK */
+  .text-block {
+    padding: 0 15px;
+  }
+  
+  .text-block p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  /* BUTTON */
+  .button {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 999px;
+    background: var(--olive);
+    color: white;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: 0.2s;
+  }
+  .map-container {
+    margin-top: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .script {
+    text-align: center;
+    font-family: "Great Vibes", cursive;
+    color: var(--navy);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    margin: 20px 0;
+    line-height: 1.2;
+  }
+  .script .en {
+    display: block;
+    color: var(--navy);
+  }
+  
+  .script .es {
+    display: block;
+    color: var(--olive);
+    font-size: 0.9em;
+    opacity: 0.9;
+  }
+  .button:hover {
+    background: var(--olive-dark);
+  }
+  
+  .button.secondary {
+    background: var(--olive);
+  }
+  
+  .button.secondary:hover {
+    background: var(--olive-dark);
+  }
+  /* WEATHER + INSTAGRAM */
+  .weather-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .weatherwidget-io {
+    width: 100%;
+    display: block;
+    min-height: 230px;
   }
   @media (max-width: 768px) {
     .weather-grid {
@@ -310,15 +626,16 @@
     color: var(--muted);
   }
   @media (max-width: 768px) {
-    .gallery {
-      grid-template-columns: 1fr;
+    .hero {
+      min-height: auto;
+      padding: 80px 20px 40px;
+    }
+  
+    .overlay {
+      padding: 25px 20px;
     }
   
     h1 {
       font-size: 2.8rem;
-    }
-  
-    .overlay {
-      padding: 30px 20px;
     }
   }
