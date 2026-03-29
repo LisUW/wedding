@@ -100,14 +100,21 @@
     font-size: 0.8rem;
   }
   
+  .script {
+    font-family: "Great Vibes", cursive;
+    color: var(--navy);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+  }
+  
   .subtitle {
-    color: var(--muted);
-    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+    color: var(--olive);
+    font-size: 1.2rem;
   }
   
   /* SECTIONS */
   .section {
-    padding: 70px 20px;
+    padding: 50px 15px;
   }
   
   .section:nth-child(even) {
@@ -132,9 +139,10 @@
   .couple-photo {
     width: 100%;
     height: auto;
-    max-height: 400px;
+    max-height: 300px; /* antes 400px */
     object-fit: cover;
     border-radius: 20px;
+    margin-top: 10px;
   }
   
   .hachi {
@@ -630,7 +638,9 @@
       min-height: auto;
       padding: 80px 20px 40px;
     }
-  
+    .hero {
+        min-height: 100svh;
+      }
     .overlay {
       padding: 25px 20px;
     }
