@@ -187,32 +187,47 @@
   <!-- OFFICIANT -->
   <section class="section officiant">
     <div class="container">
-      <h2>Ceremony</h2>
-  
-      <div class="cards single-card">
-        <div class="card">
-          <h3>A.J. Hapenny</h3>
-          <p>Wedding Officiant · Boston, MA</p>
-          <p>
-            Our ceremony will be led by a warm and engaging officiant with a background in comedy.
-            The ceremony will be personal, meaningful, and centered on celebrating our story and the people we love.
-          </p>
+        <h2>Ceremony<br>Ceremonia</h2>
+
+        <div class="cards single-card">
+          <div class="card">
+            <h3>A.J. Hapenny</h3>
+            <p>Wedding Officiant · Boston, MA</p>
+            <p>Oficiante de boda · Boston, MA</p>
+        
+            <p>
+              Our ceremony will be led by a warm and engaging officiant with a background in comedy. 
+              It will be personal, meaningful, and centered on celebrating our story and the people we love.
+            </p>
+        
+            <p>
+              Nuestra ceremonia será guiada por un oficiante cálido y cercano, con experiencia en comedia. 
+              Será una ceremonia personal, significativa y enfocada en celebrar nuestra historia y a las personas que amamos.
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
   </section>
 
-  <!-- WEATHER -->
-  <section class="section weather">
+ <!-- WEATHER -->
+ <section class="section weather">
     <div class="container">
-      <h2>Weather</h2>
-
+      <h2>Weather<br>Clima</h2>
+  
       <div class="cards single-card">
         <div class="card center">
-          <p id="weatherStatus">
-            Forecast will be shown here and will update dynamically closer to the wedding date.
+          <a class="weatherwidget-io"
+             href="https://forecast7.com/en/42d45n71d14/winchester/?unit=us"
+             data-label_1="WINCHESTER"
+             data-label_2="WEATHER / CLIMA"
+             data-theme="pure">
+             WINCHESTER WEATHER / CLIMA
+          </a>
+  
+          <p>
+            Live local weather for Winchester, Massachusetts.
+            <br>
+            Clima local en tiempo real para Winchester, Massachusetts.
           </p>
-          <p id="weatherDetails"></p>
         </div>
       </div>
     </div>
@@ -221,21 +236,28 @@
   <!-- INSTAGRAM -->
   <section class="section venue-social">
     <div class="container">
-      <h2>Venue Instagram</h2>
+        <h2>Venue Instagram<br>Instagram del lugar</h2>
 
-      <div class="cards single-card">
-        <div class="card center">
-          <p>You can see more photos of Wright-Locke Farm here:</p>
-          <a
-            class="button"
-            href="https://www.instagram.com/wrightlockefarm/"
-            target="_blank"
-          >
-            View Wright-Locke Farm Instagram
-          </a>
+        <div class="cards single-card">
+          <div class="card center">
+            <p>
+              You can see more photos of Wright-Locke Farm here:
+            </p>
+        
+            <p>
+              Pueden ver más fotos de Wright-Locke Farm aquí:
+            </p>
+        
+            <a
+              class="button"
+              href="https://www.instagram.com/wrightlockefarm/"
+              target="_blank"
+            >
+              View Instagram<br>
+              Ver Instagram
+            </a>
+          </div>
         </div>
-      </div>
-    </div>
   </section>
 
   <!-- GIFTS -->
@@ -289,6 +311,16 @@
   </footer>
 
   <script src="script.js"></script>
- 
+  <script>
+    !function(d,s,id){
+      var js,fjs=d.getElementsByTagName(s)[0];
+      if(!d.getElementById(id)){
+        js=d.createElement(s);
+        js.id=id;
+        js.src='https://weatherwidget.io/js/widget.min.js';
+        fjs.parentNode.insertBefore(js,fjs);
+      }
+    }(document,'script','weatherwidget-io-js');
+    </script>
 </body>
 </html>
