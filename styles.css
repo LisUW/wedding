@@ -177,17 +177,34 @@
     margin-top: 15px;
     transition: 0.2s;
   }
+  .script {
+    font-family: "Great Vibes", cursive;
+    color: var(--navy);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    margin: 20px 0;
+    line-height: 1.2;
+  }
+  .script .en {
+    display: block;
+    color: var(--navy);
+  }
   
+  .script .es {
+    display: block;
+    color: var(--olive);
+    font-size: 0.9em;
+    opacity: 0.9;
+  }
   .button:hover {
     background: var(--olive-dark);
   }
   
   .button.secondary {
-    background: var(--navy);
+    background: var(--olive);
   }
   
   .button.secondary:hover {
-    background: #162033;
+    background: #556447;
   }
   
   /* WEATHER + INSTAGRAM */
