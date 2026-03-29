@@ -205,25 +205,28 @@
   }
   
   /* DETAILS CARDS */
-  .details-cards {
+  .details-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     margin-top: 30px;
   }
   
-  .details-cards .card {
-    text-align: center;
+  .details-grid .card {
+    padding: 30px;
+    text-align: left;
   }
   
-  .details-cards h3 {
-    margin-bottom: 16px;
-  }
+  /* MOBILE (clave para iPhone 👇) */
+  @media (max-width: 768px) {
+    .details-grid {
+      grid-template-columns: 1fr;
+    }
   
-  .details-cards p {
-    margin-bottom: 10px;
+    .details-grid .card {
+      text-align: center;
+    }
   }
-  
   /* TEXT BLOCK */
   .text-block {
     max-width: 760px;
