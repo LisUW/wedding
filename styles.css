@@ -2,14 +2,13 @@
 * {
     box-sizing: border-box;
   }
-  
   :root {
-    --bg: #fff8f5;
-    --bg-soft: #f5eee8;
+    --bg: #f7f7f5;          /* blanco cálido */
+    --bg-soft: #eef1ec;     /* verde grisáceo suave */
     --text: #2d2d2d;
     --muted: #5f5a57;
-    --olive: #6b7d5c;
-    --wine: #7a1f47;
+    --olive: #6b7d5c;       /* oliva principal */
+    --olive-dark: #556447;  /* oliva oscuro para hover */
     --navy: #1f2a44;
     --card: #ffffff;
     --border: rgba(31, 42, 68, 0.08);
@@ -46,7 +45,7 @@
   
   h2 {
     font-family: "Playfair Display", serif;
-    color: var(--wine);
+    color: var(--olive);
     text-align: center;
     font-size: clamp(1.9rem, 4vw, 2.7rem);
     margin-bottom: 20px;
@@ -69,7 +68,7 @@
   .hero {
     min-height: 100vh;
     background:
-      linear-gradient(rgba(255,248,245,0.7), rgba(255,248,245,0.9)),
+    linear-gradient(rgba(247,247,245,0.7), rgba(247,247,245,0.9)),
       linear-gradient(135deg, rgba(107,125,92,0.7), rgba(31,42,68,0.7)),
       url("us.jpg");
     background-size: cover;
@@ -82,8 +81,8 @@
   }
   
   .overlay {
-    background: rgba(255,255,255,0.4);
-    backdrop-filter: blur(6px);
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(8px);
     border-radius: 25px;
     padding: 40px 30px;
     max-width: 800px;
@@ -93,7 +92,7 @@
   .eyebrow {
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: var(--wine);
+    color: var(--olive);
     font-size: 0.8rem;
   }
   
@@ -172,7 +171,7 @@
     display: inline-block;
     padding: 14px 24px;
     border-radius: 999px;
-    background: var(--wine);
+    background: var(--olive);
     color: white;
     font-weight: 600;
     margin-top: 15px;
@@ -180,7 +179,7 @@
   }
   
   .button:hover {
-    background: #5c1836;
+    background: var(--olive-dark);
   }
   
   .button.secondary {
@@ -197,26 +196,62 @@
     text-align: center;
   }
   .venue-gallery {
-    background-color: #f9f5f2;
-    padding: 60px 20px;
+    background-color: var(--bg-soft);
   }
   
   .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 24px;
     margin-top: 40px;
   }
   
   .gallery img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 18px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
+  .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  }
+  .gallery img {
+    border-radius: 20px;
+  }
+  .carousel {
+    position: relative;
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: center;
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+  
+  .carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .prev {
+    left: -20px;
+  }
+  
+  .next {
+    right: -20px;
+  }
   .gallery img:hover {
     transform: scale(1.03);
   }
@@ -234,13 +269,11 @@
   footer {
     text-align: center;
     padding: 30px;
-    background: #efe7e1;
+    background: var(--bg-soft);
     color: var(--muted);
   }
-  
-  /* RESPONSIVE */
-  @media (max-width: 800px) {
-    .cards {
+  @media (max-width: 768px) {
+    .gallery {
       grid-template-columns: 1fr;
     }
   
