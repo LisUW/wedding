@@ -177,6 +177,12 @@
     margin-top: 15px;
     transition: 0.2s;
   }
+  .map-container {
+    margin-top: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+  }
   .script {
     font-family: "Great Vibes", cursive;
     color: var(--navy);
